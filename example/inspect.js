@@ -1,11 +1,8 @@
-'use strict';
+let bunyan = require('bunyan'),
+    bformat = require('../'),
+    formatOut = bformat({ outputMode: 'inspect' });
 
-var bunyan = require('bunyan')
-  , bformat = require('../')  
-  , formatOut = bformat({ outputMode: 'inspect' })
-  ;
-
-var log = bunyan.createLogger({ name: 'app', stream: formatOut, level: 'debug' } );
+const log = bunyan.createLogger({ name: 'app', stream: formatOut, level: 'debug' });
 
 log.info('starting up');
 log.debug('things are heating up', { temperature: 80, status: { started: 'yes', overheated: 'no' } });

@@ -4,7 +4,9 @@
   "description": "Writable stream that formats bunyan records that are piped into it.",
   "main": "index.js",
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap test/*.js",
+    "eslint-fix": "eslint --fix lib/*.js example/*.js test/*.js ./index.js",
+    "lint": "eslint  *.js"
   },
   "repository": {
     "type": "git",
@@ -16,8 +18,12 @@
     "ansicolors": "~0.3.2"
   },
   "devDependencies": {
-    "tap": "~0.4.3",
-    "bunyan": "~0.22.0"
+    "tap": "~12.0.1",
+    "bunyan": "~1.8.12",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-es-beautifier": "^1.0.1",
+    "eslint-plugin-import": "^2.12.0"
   },
   "keywords": [
     "bunyan",
